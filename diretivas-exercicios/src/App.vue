@@ -4,7 +4,9 @@
     <p v-text="'Usando diretivas v-text'"></p>
     <p v-html="'Usando diretivas <strong>v-html</strong>'"></p>
     <hr />
-    <p v-destaque-local:fundo.atrasar.alternar="{cor1: 'green', cor2: 'red', atraso: 2000, intervalo: 200}">Usando diretiva personalizada</p>
+    <p
+      v-destaque-local:fundo.atrasar.alternar="{cor1: 'green', cor2: 'red', atraso: 2000, intervalo: 200}"
+    >Usando diretiva personalizada</p>
     <p v-destaque-local="{cor1: 'green', atraso: 3000}">Usando diretiva personalizada</p>
     <hr />
     <p v-destaque:fundo.atrasar="'lightblue'">Usando diretiva personalizada</p>
@@ -33,9 +35,9 @@ export default {
         setTimeout(() => {
           if (binding.modifiers["alternar"]) {
             setInterval(() => {
-				corAtual = corAtual === cor1 ? cor2 : cor1
-				aplicarCor(corAtual);
-			}, binding.value.intervalo);
+              corAtual = corAtual === cor1 ? cor2 : cor1;
+              aplicarCor(corAtual);
+            }, binding.value.intervalo);
           } else {
             aplicarCor(binding.value.cor1);
           }
